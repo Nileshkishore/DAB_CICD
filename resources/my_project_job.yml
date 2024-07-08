@@ -1,0 +1,28 @@
+# The main job for my_project.
+resources:
+  jobs:
+    my_project_job:
+      name: my_project_job
+
+      schedule:
+        quartz_cron_expression: '* 10 * * * ?'  
+        timezone_id: Europe/Amsterdam
+
+      email_notifications:
+        on_failure:
+          - nileshkishore2001@hotmail.com
+
+      tasks:
+        - task_key: notebook_task
+          job_cluster_key: job_cluster
+          notebook_task:
+            notebook_path: ../src/notebook.ipynb
+        
+      job_clusters:
+        - job_cluster_key: job_cluster
+          new_cluster:
+            spark_version: 13.3.x-scala2.12
+            node_type_id: Standard_D3_v2
+            autoscale:
+                min_workers: 1
+                max_workers: 4
