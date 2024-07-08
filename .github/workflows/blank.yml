@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy Databricks Bundle
         run: |
-          databricks validate
+          databricks bundle validate
