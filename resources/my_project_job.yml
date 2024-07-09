@@ -14,20 +14,12 @@ resources:
 
       tasks:
         - task_key: notebook_task
-          job_cluster_key: job_cluster
+          existing_cluster_id: 0621-040047-ldxdw05q
           notebook_task:
             notebook_path: ../src/notebook.ipynb
 
         - task_key: notebook_task_2
-          job_cluster_key: job_cluster
+          existing_cluster_id: 0621-040047-ldxdw05q
           notebook_task:
             notebook_path: ../src/ray_code.ipynb
 
-      job_clusters:
-        - job_cluster_key: job_cluster
-          new_cluster:
-            spark_version: 13.3.x-scala2.12
-            node_type_id: Standard_D3_v2
-            autoscale:
-                min_workers: 1
-                max_workers: 2
