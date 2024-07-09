@@ -17,8 +17,8 @@ resources:
           job_cluster_key: job_cluster
           notebook_task:
             notebook_path: ../src/notebook.ipynb
-            
-        - task_key: notebook_task
+
+        - task_key: notebook_task_2
           job_cluster_key: job_cluster
           notebook_task:
             notebook_path: ../src/ray_code.ipynb
