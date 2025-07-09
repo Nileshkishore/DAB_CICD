@@ -10,12 +10,16 @@ on:
 
 jobs:
   deploy:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
       # Do not remove: useful for debug purposes
       - name: Dump event JSON and environment
         run: cat "$GITHUB_EVENT_PATH"; env
+
+      - name: Dump event JSON and environment2 
+        run: cat "$GITHUB_EVENT_PATH";
         
       - name: Checkout repository
         uses: actions/checkout@v2
